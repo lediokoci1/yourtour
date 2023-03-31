@@ -106,29 +106,6 @@ app.use(
   })
 );
 
-// // Body parser, reading data from body into req.body
-// app.use(express.json({ limit: '10kb' }));
-
-// Ledio test
-// app.use((req, res, next) =>
-//   req.originalUrl === '/webhook'
-//     ? next()
-//     : express.json({ limit: '10kb' })(req, res, next)
-// );
-
-// fund menyra kursit
-
-// menyra ne github
-// app.use((req, res, next) => {
-//   console.log('USE======>', req.originalUrl);
-//   if (req.originalUrl === '/webhook') {
-//     console.log('NEXTTTTTTTTTTTTTTTTTTTTTTTT');
-//     next(); // Do nothing with the body because I need it in a raw state.
-//   } else {
-//     express.json({ limit: '10kb' })(req, res, next); // ONLY do express.json() if the received request is NOT a WebHook from Stripe.
-//   }
-// });
-
 // Returns middleware that only parses urlencoded bodies and only looks at requests where the Content-Type header matches the type option
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cookieParser());
